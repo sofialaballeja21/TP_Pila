@@ -113,3 +113,10 @@ while(not cola1.cola_vacia()):
         print(' ha el dato ha sido borrado')
     else:
         print(dato)
+        
+'''def barrido_nivel(self, dino, nivel):  #pertenece al parcial
+        aux = self.__inicio
+        while(aux is not None):
+            if(aux.info.nombre in dino and aux.info.level in nivel):
+                print(aux.info)
+            aux = aux.sig'''
