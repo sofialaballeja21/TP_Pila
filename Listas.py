@@ -1,3 +1,4 @@
+
 def criterio(dato, campo=None):
     dic = {}
     if(hasattr(dato, '__dict__')):
@@ -134,7 +135,7 @@ class Lista():
             if(aux.info.batallas_ganadas / total >= 0.79):
                 print(aux.info)
             aux = aux.sig
-            
+    
     def barrido_femenino(self):
         aux = self.__inicio
         while(aux is not None):
@@ -184,7 +185,6 @@ class Lista():
                 print(aux.info)
             aux = aux.sig
     
-            
     def busqueda(self, buscado, campo=None):
         pos = None
         aux = self.__inicio
@@ -260,10 +260,20 @@ class Lista():
                 break
             aux = aux.sig
         return mayor
-
-    def dino_level(self, lista, nivel):
+    
+    def mayor_de_lista_canciones(self, campo):
+        mayor = self.__inicio
         aux = self.__inicio
         while(aux is not None):
-            if(aux.info.nombre in lista and aux.info.level in nivel):
+            if(criterio(aux.info, campo) > criterio(mayor.info, campo)):
+                mayor = aux
+                break
+            aux = aux.sig
+        return mayor
+
+    def barrido_nivel(self, dino, nivel):  #pertenece al parcial
+        aux = self.__inicio
+        while(aux is not None):
+            if(aux.info.nombre in dino and aux.info.level in nivel):
                 print(aux.info)
             aux = aux.sig
