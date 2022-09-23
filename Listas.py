@@ -135,6 +135,56 @@ class Lista():
                 print(aux.info)
             aux = aux.sig
             
+    def barrido_femenino(self):
+        aux = self.__inicio
+        while(aux is not None):
+            if(aux.info.genero == 'femenino'):
+                print(aux.info)
+            aux = aux.sig
+            
+    def barrido_droide(self):
+        aux = self.__inicio
+        while(aux is not None):
+            if(aux.info.especie == 'droide' and aux.info.episodio <= 6):
+                print(aux.info)
+            aux = aux.sig
+    
+    def barrido_episodio(self):
+        aux = self.__inicio
+        while(aux is not None):
+            if(aux.info.episodio == 7 or  aux.info.episodio == 6 or aux.info.episodio == 5):
+                print(aux.info)
+            aux = aux.sig
+    
+    def barrido_mayor_850(self):
+        aux = self.__inicio
+        while(aux is not None):
+            if(aux.info.edad > 850):
+                print(aux.info)
+            aux = aux.sig    
+            
+    def barrido_humanos(self):
+        aux = self.__inicio
+        while(aux is not None):
+            if(aux.info.especie == 'humano' and aux.info.planeta == 'alderaan'):
+                print(aux.info)
+            aux = aux.sig
+            
+    def barrido_altura(self):
+        aux = self.__inicio
+        while(aux is not None):
+            if(aux.info.altura < 70):
+                print(aux.info)
+            aux = aux.sig
+            
+    def buscar_Chewbacca(self):
+        aux = self.__inicio
+        while(aux is not None):
+            if(aux.info.nombre == 'Chewbacca'):
+                print(aux.info)
+            aux = aux.sig
+    
+            
     def busqueda(self, buscado, campo=None):
         pos = None
         aux = self.__inicio
