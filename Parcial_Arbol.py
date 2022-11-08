@@ -122,6 +122,20 @@ print()'''
 
 
 
+def inorden_personajes_altura(arbol):
+    if(arbol is not None):
+        inorden_personajes_altura(arbol['izq'])
+        if (arbol['info'] <= '0.9'):
+            print(arbol['datos'])
+        inorden_personajes_altura(arbol['der'])
+        
+def inorden_personajes_peso(arbol):
+    if(arbol is not None):
+        inorden_personajes_peso(arbol['izq'])
+        if (arbol['info'] > '75kg'):
+            print(arbol['datos'])
+        inorden_personajes_peso(arbol['der'])
+        
 
 
 
