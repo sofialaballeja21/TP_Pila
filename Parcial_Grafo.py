@@ -55,27 +55,49 @@ grafo.insertar_arista('Obi-Wan Kenobi', 'R2-D2', 13)
 grafo.insertar_arista('BB-8', 'Yoda', 354)
 grafo.insertar_arista('BB-8', 'ahsoka tano', 232)
 
-'''b. hallar el árbol de expansión mínimo desde el vértice que contiene a C-3PO, Yoda y la princesa Leia;'''
 
+'''b. hallar el árbol de expansión mínimo desde el vértice que contiene a C-3PO, Yoda y la princesa Leia;'''
 arbol = grafo.kruskal()
-     #print(arbol_min)
-arbol = arbol[0].split('-')
+arbol = arbol[0]
 peso_total = 0
-for nodo in arbol:
-     nodo = nodo.split(';')
-     #print(nodo)
-     peso_total += int(nodo[2])
-     print(f'{nodo[0]}-{nodo[1]}-{nodo[2]}')
-print(f"Arbol de expancion minimo: {peso_total}")
+if ('Yoda' in arbol or 'Leila' in arbol or 'R2-D2' in arbol):
+     for nodo in arbol:
+          nodo = nodo
+          peso_total += int(nodo[2])
+          print(f'{nodo[0]}-{nodo[1]}-{nodo[2]}')
+     print(f"Arbol de expancion minimo: {peso_total}")
 
  
 #c. determinar cuales personajes comparten con otro dos episodios o mas (mostrar el par de pesonajes);
+#el peso tiene que ser mayor que 2 (peso = episodios compartidos)
 
-
+grafo.episodios()
 
 #e. determinar que personaje es el que a compartido episodio con la mayor cantidad del resto de los personajes.
 
+# el mayor peso 
 
+grafo.personaje_compartio_episodios()
+
+
+def personaje_compartio_episodios(self):
+        personaje = {}
+        aux = self.__inicio
+        while aux is not None:
+            if [aux.datos['peso']] not in personaje:
+                if (aux.datos > aux.datos.sig):
+                    print(aux.datos)
+                aux = aux.sig
+            return personaje
+        
+    
+def episodios(self):
+        episodios = {}
+        aux = self.__inicio
+        while aux is not episodios:
+            if aux.datos['peso'] > 2:
+                print(aux.datos)
+            return episodios
 
 
 
